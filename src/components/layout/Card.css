@@ -1,0 +1,29 @@
+.Card {
+   border: 3px solid;
+   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.767);
+   border-radius: 10px;
+   overflow: hidden;
+   margin: 5px;
+
+   display: flex;
+   flex-direction: column;
+   max-width: 500px;
+   min-width: 500px; /*Tamanho minimo do card vai ser 300 px*/
+}
+
+.Card .Title {
+   padding:10px 0px;
+   display:flex;
+   justify-content:center;
+   margin: 1em;
+}
+
+.Card .Content {
+   /*flex-grow e para ocupar toda a borda e nao deixar sobrar espaco*/
+   flex-grow: 1;
+   text-align: center;
+   background-color: #fff;
+   color: #000;
+   padding: 10px;
+}
+
