@@ -1,26 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import IndiretaFilho from './IndiretaFilho'
 
+// useState, consegue criar estado dentro de um componente.
 export default props => {
 
    //nome idade nerds
-   let nome = '', idade = 0, nerd = false
+   const [nome, setNome] = useState('?') //uma funcao que altera um determinado atributo vc chama ela de set.
+   const [idade, setIdade] = useState(0)
+   const [nerd, setNerd] = useState(false)
 
+   function fornecerInformacoes(nome, idade, nerd) {
+      setNome (nome)
+      setIdade (idade)
+      setNerd (nerd)
 
-   function fornecerInformacoes(nomeParam, idadeParam, nerdParam) {
-      nome = nomeParam
-      idade = idadeParam
-      nerd = nerdParam
-
-      console.log(nomeParam,idadeParam,nerdParam)
+      //setNome vai receber o parametro, props, chamada nome.
    }
 
    return (
       <div>
          <div>
             <span>{nome} </span>
-            <span><strong>{idade}</strong></span>
+            <span><strong>Vao ganhar o mundial em {idade} anos, </strong></span>
             <span>{nerd ? 'Verdadeiro' : 'Falso'}</span>
          </div>
          <IndiretaFilho quandoClicar={fornecerInformacoes} >
