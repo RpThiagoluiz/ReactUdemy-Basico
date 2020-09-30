@@ -1,5 +1,3 @@
-´git init´ - inicia a linha do tempo
-´git add´ - atualiza ou adc mudanças para irem para a linha do tempo
-´git commit´ - adciona um ponto na linha do tempo (ir ou voltar nela.)
-´git log´ - visualiza os pontos na linha do tempo / commit
-´git status´ - informa o estado das alterações do nosso projeto
+Ola, esses documentos aqui foram gerados durante as aulas https://www.udemy.com/course/react-redux-pt/.
+Atualmente eu estudo react, ja tenho um noção boa de html, css e js basico. Thiago do futuro vai ver aqui depois s2 (não mora de CoviD)
+
