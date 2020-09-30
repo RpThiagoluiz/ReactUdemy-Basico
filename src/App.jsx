@@ -12,6 +12,7 @@ import TabelaProdutosEu from './components/repeticao/TabelaProdutos'
 import ParOuImpar from './components/condicional/ParOuImpar'
 import UsuarioInfo from './components/condicional/UsuarioInfo'
 import DiretaPai from './components/comunicacao/DiretaPai'
+import IndiretaPai from './components/comunicacao/IndiretaPai'
 
 
 import Card from './components/layout/Card'
@@ -57,6 +58,10 @@ export default _ =>
       <h1>Fundamentos React Arrow </h1>
 
       <div className="Cards">
+
+      <Card titulo='#10 Comunicacao Indireta' color='#F26B38'>
+            <IndiretaPai />
+         </Card>
 
          <Card titulo='#9 Comunicacao Direta' color='#E8175D'>
             <DiretaPai />
