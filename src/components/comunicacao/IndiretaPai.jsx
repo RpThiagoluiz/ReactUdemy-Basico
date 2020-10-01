@@ -5,7 +5,7 @@ import IndiretaFilho from './IndiretaFilho'
 // useState, consegue criar estado dentro de um componente.
 export default props => {
 
-   //nome idade nerds
+   //nome idade nerds - react Hook
    const [nome, setNome] = useState('?') //uma funcao que altera um determinado atributo vc chama ela de set.
    const [idade, setIdade] = useState(0)
    const [nerd, setNerd] = useState(false)
