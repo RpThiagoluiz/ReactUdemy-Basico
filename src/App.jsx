@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Input from './components/formulario/Input'
 import Primeiro from './components/basicos/Primeiro'
 import ComParametro from './components/basicos/ComParametro'
 import Fragmento from './components/basicos/Fragmento'
@@ -58,6 +59,10 @@ export default _ =>
       <h1>Fundamentos React Arrow </h1>
 
       <div className="Cards">
+
+      <Card titulo='#11 Componente Controlado' color='#ffbbee'>
+            <Input />
+         </Card>
 
       <Card titulo='#10 Comunicacao Indireta' color='#F26B38'>
             <IndiretaPai />
