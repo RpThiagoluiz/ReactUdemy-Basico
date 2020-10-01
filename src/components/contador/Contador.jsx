@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Display from './Display'
+import Btn from './Btn'
+import Form from './Form'
 
 import './Contador.css'
 
@@ -11,7 +14,7 @@ export default class Contador extends Component {
 
    inc = () => {
       this.setState({
-         numero: this.state.numero + this.state.passo, 
+         numero: this.state.numero + this.state.passo,
       })
    }
 
@@ -21,15 +24,11 @@ export default class Contador extends Component {
       })
    }
 
-   
-   setPasso = (e) => {
+
+   setPasso = (NovoPasso) => {
       this.setState({
-         passo: +e.target.value, //esse + é para converter em inteiro o valor passado no input
+         passo: +NovoPasso, //esse + é para converter em inteiro o valor passado no input
       })
-   }
-   
-   setNumInicial = (e) => {
-      this.setState({ numero: +e.target.value }) //eu q fiz
    }
 
 
@@ -37,32 +36,13 @@ export default class Contador extends Component {
       return (
          <div className="contador">
             <h2>Contador</h2>
-            <span><strong>{this.state.numero}</strong></span>
+            <Display numero={this.state.numero} />
 
             <div className="labels">
-            <div>
-               <label htmlFor="numIncialInput">Passo:</label>
-               <input 
-               id="numIncialInput"
-               type="number"
-               value={this.state.numero}
-               onChange={this.setNumInicial}
-               />
-            </div>
-
-            <div>
-               <label htmlFor="passoInput">Passo:</label>
-               <input 
-               id="passoInput"
-               type="number"
-               value={this.state.passo}
-               onChange={this.setPasso}
-               />
-            </div>
+            <Form passo={this.state.passo} setPasso={this.setPasso}/>
             </div>
             <div className="btns">
-               <button onClick={this.inc}> + </button>
-               <button onClick={this.dec}> - </button>
+               <Btn setInc={this.inc} setDec={this.dec} />
             </div>
          </div>
       )
@@ -75,7 +55,7 @@ export ali em cima, ou export no final...
 
    export default Contador
 
-Na class, vc tem o render, que rendezida o jsx para ele da o return no navegador. ou algo assim.mas tem q ter
+O componente, dentro de uma class pedi a function render() { return ()} - para ela renderizar e o que  é retornado da function render é exportado.
 
 state = {
       numero: this.props.numeroInicial
@@ -152,6 +132,77 @@ state = {
 
 
 *- setPasso o setNumInicial , vou deixar pra o thiago do futuro intender, pra ve se ele aprendeu tudo q ta acontecendo msm. q o thiago do passado nao intendeu muito bem....
+
+
+Isso aqui agora vai ser quebrado:
+            export default class Contador extends Component {
+
+   state = {
+      numero: this.props.numeroInicial || 0, //se o numero inicial nao for fornecido ele sera 0
+      passo: this.props.passoInicial || 1, //se o passo nao for fornecido sera 1
+   };
+
+   inc = () => {
+      this.setState({
+         numero: this.state.numero + this.state.passo,
+      })
+   }
+
+   dec = () => {
+      this.setState({
+         numero: this.state.numero - this.state.passo,
+      })
+   }
+
+
+   setPasso = (e) => {
+      this.setState({
+         passo: +e.target.value, //esse + é para converter em inteiro o valor passado no input
+      })
+   }
+
+   setNumInicial = (e) => {
+      this.setState({ numero: +e.target.value }) //eu q fiz
+   }
+
+
+   render() {
+      return (
+         <div className="contador">
+            <h2>Contador</h2>
+            <span><strong>{this.state.numero}</strong></span>
+
+            <div className="labels">
+            <div>
+               <label htmlFor="numIncialInput">Passo:</label>
+               <input
+               id="numIncialInput"
+               type="number"
+               value={this.state.numero}
+               onChange={this.setNumInicial}
+               />
+            </div>
+
+            <div>
+               <label htmlFor="passoInput">Passo:</label>
+               <input
+               id="passoInput"
+               type="number"
+               value={this.state.passo}
+               onChange={this.setPasso}
+               />
+            </div>
+            </div>
+            <div className="btns">
+               <button onClick={this.inc}> + </button>
+               <button onClick={this.dec}> - </button>
+            </div>
+         </div>
+      )
+   }
+}
+
+
 
 */
 
