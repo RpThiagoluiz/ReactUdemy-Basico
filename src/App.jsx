@@ -15,6 +15,7 @@ import UsuarioInfo from './components/condicional/UsuarioInfo'
 import DiretaPai from './components/comunicacao/DiretaPai'
 import IndiretaPai from './components/comunicacao/IndiretaPai'
 import Contador from './components/contador/Contador'
+import GerarNumeros from './components/desafioMegaSena/GerarNumeros'
 
 
 import Card from './components/layout/Card'
@@ -60,8 +61,12 @@ export default _ =>
       <h1>Fundamentos React Arrow </h1>
 
       <div className="Cards">
+
+         <Card titulo='#13 DesafioEu' color='#F7DB4F'>
+            <GerarNumeros />
+         </Card>
          <Card titulo='#12 Contador' color='#DCEDC2'>
-            <Contador numeroInicial={0} passoInicial={1}/>
+            <Contador numeroInicial={0} passoInicial={1} />
          </Card>
 
          <Card titulo='#11 Componente Controlado' color='#ffbbee'>
