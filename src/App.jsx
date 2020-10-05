@@ -15,7 +15,8 @@ import UsuarioInfo from './components/condicional/UsuarioInfo'
 import DiretaPai from './components/comunicacao/DiretaPai'
 import IndiretaPai from './components/comunicacao/IndiretaPai'
 import Contador from './components/contador/Contador'
-import GerarNumeros from './components/desafioMegaSena/GerarNumeros'
+import GerarNumeros from './components/desafioMegaSenaEu/GerarNumeros'
+import SorteioProf from './components/desafioMegaSenaProf/Sorteio'
 
 
 import Card from './components/layout/Card'
@@ -62,9 +63,14 @@ export default _ =>
 
       <div className="Cards">
 
+         <Card titulo='#13.1 DesafioProf' color='#00a6c0'>
+            <SorteioProf />
+         </Card>
+
          <Card titulo='#13 DesafioEu' color='#F7DB4F'>
             <GerarNumeros />
          </Card>
+
          <Card titulo='#12 Contador' color='#DCEDC2'>
             <Contador numeroInicial={0} passoInicial={1} />
          </Card>

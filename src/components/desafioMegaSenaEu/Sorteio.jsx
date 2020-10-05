@@ -18,7 +18,9 @@ export default props => {
    const min = 1
    const max = 60
 
-   const numeros = () => parseInt(Math.random() * (max - min) + min)
+   const numeros = () => parseInt(Math.random() * (max - min)+ min)
+   
+   
 
    return (
       <React.Fragment>
@@ -29,7 +31,7 @@ export default props => {
                   {numeros()} <br /> {numeros()} <br />
                   {numeros()} <br /> {numeros()} <br />
                </strong>
-               <button onClick={_=> cb(numeros())} > Sortear
+               <button className="btn-Sorteio" onClick={_=> cb(numeros())} > Sortear
 
                </button>
             </span>
